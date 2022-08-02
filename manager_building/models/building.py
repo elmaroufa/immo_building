@@ -3,6 +3,14 @@
 from odoo import models, fields, api
 
 
+
+class ProductBuild(models.Model):
+    _inherit = 'product.template'
+
+    building_ids = fields.Many2one("building_manager",string="Batiments", required=False)
+
+   
+
 class ResPartner(models.Model):
     _inherit = 'res.users'
 
@@ -19,6 +27,8 @@ class manager_building(models.Model):
     city = fields.Char(string="Ville")
     district = fields.Char(string="Quartier")
     manager_ids = fields.Many2one("res.users", string="Manager", required=False)
+    product_build = fields.One2many("product.template", "building_ids", string="Produit de location",
+    required=False)
     description = fields.Text(string="Description batiment")
 
 
