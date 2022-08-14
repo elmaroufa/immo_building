@@ -13,6 +13,8 @@
     'depends': ['sale'],
     'data': ['views/sale_order.xml',
              'views/product_template.xml',
+             'views/special_invoice_move.xml',
+             'report/report_invoice.xml',
     
     ],
     'installable': True,

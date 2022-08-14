@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="account_invoice_production_lot_report" inherit_id="account.report_invoice_document">
+
+        <xpath expr="//div[@name='invoice_date']" position="after">
+        <div class="col-auto mw-100 mb-2">
+                            <strong>Date mise a jour Loyer:</strong>
+                            <p class="m-0" t-field="o.fac_start_date"/>
+                        </div>
+        </xpath>
+
+        <xpath expr="//div[@name='due_date']" position="replace">
+             <div class="col-auto mw-100 mb-2">
+                <strong>Date fin  Loyer:</strong>
+                <p class="m-0" t-field="o.fac_end_date"/>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>
